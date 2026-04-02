@@ -15,7 +15,7 @@ export function App() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    getCashback().then((cashback) => setCashback({ cashback }));
+    getCashback().then((cashback) => setCashback(cashback));
   }, []);
 
   const updateProducts = useCallback(
