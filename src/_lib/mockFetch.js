@@ -12,8 +12,9 @@ export const mockFetch = (url) => {
         resolve({
           ok: true,
           status: 200,
-          json: async () => cashbackData
+          json: async () => cashbackData,
         });
+
         return;
       }
 
@@ -21,8 +22,9 @@ export const mockFetch = (url) => {
         resolve({
           ok: true,
           status: 200,
-          json: async () => productsData
+          json: async () => productsData,
         });
+
         return;
       }
 
@@ -37,15 +39,16 @@ export const mockFetch = (url) => {
         resolve({
           ok: true,
           status: 200,
-          json: async () => ({ products: filteredProducts })
+          json: async () => ({ products: filteredProducts }),
         });
+
         return;
       }
 
       resolve({
         ok: false,
         status: 404,
-        json: async () => ({ error: 'Not found' })
+        json: async () => ({ error: 'Not found' }),
       });
     }, 300);
   });

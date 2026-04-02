@@ -1,3 +1,4 @@
+import React from 'react';
 import './Input.css';
 
 /**
@@ -8,8 +9,8 @@ import './Input.css';
  */
 export function Input(props) {
   return (
-    <div className='inputBox'>
-      <input className='input' {...props} />
+    <div className="inputBox">
+      <input className="input" {...props} />
     </div>
-  )
+  );
 }

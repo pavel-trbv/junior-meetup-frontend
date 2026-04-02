@@ -1,6 +1,7 @@
+import React from 'react';
+import { Badge } from '../Badge/index.js';
+import { formatMoney } from '../../utils/formatMoney.js';
 import './Product.css';
-import {Badge} from "../Badge/index.js";
-import {formatMoney} from "../../utils/formatMoney.js";
 
 /**
  * Компонент для отображения карточки товара
@@ -16,25 +17,25 @@ import {formatMoney} from "../../utils/formatMoney.js";
  */
 export function Product({ imageUrl, oldPrice, discount, price, cashback, brand, name }) {
   return (
-    <div className='product'>
-      <div className='imageBox'>
-        <img className='image' src={imageUrl} alt={name} />
+    <div className="product">
+      <div className="imageBox">
+        <img className="image" src={imageUrl} alt={name} />
       </div>
 
-      <div className='contentBox'>
-        <div className='priceBox'>
+      <div className="contentBox">
+        <div className="priceBox">
           {!!oldPrice && (
-            <div className='oldPriceBox'>
-              <span className='oldPriceAmount'>{formatMoney(oldPrice)}</span>
+            <div className="oldPriceBox">
+              <span className="oldPriceAmount">{formatMoney(oldPrice)}</span>
 
               {!!discount && (
-                <span className='oldPriceDiscount'>{discount}%</span>
+                <span className="oldPriceDiscount">{discount}%</span>
               )}
             </div>
           )}
 
-          <div className='realPriceBox'>
-            <span className='realPriceAmount'>{formatMoney(price)}</span>
+          <div className="realPriceBox">
+            <span className="realPriceAmount">{formatMoney(price)}</span>
 
             {!!cashback && (
               <Badge>{formatMoney(cashback, { withoutCurrency: true })}</Badge>
@@ -42,9 +43,9 @@ export function Product({ imageUrl, oldPrice, discount, price, cashback, brand, 
           </div>
         </div>
 
-        <span className='productBrand'>{brand}</span>
-        <span className='productName'>{name}</span>
+        <span className="productBrand">{brand}</span>
+        <span className="productName">{name}</span>
       </div>
     </div>
-  )
+  );
 }
