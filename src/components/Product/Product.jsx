@@ -6,7 +6,7 @@ import './Product.css';
 /**
  * Компонент для отображения карточки товара
  * @param {string} imageUrl ссылка на изображение товара
- * @param {number} [oldPrice] старая цена @optional
+ * @param {number} [oldPrice] старая цена
  * @param {number} [discount] процент скидки (со знаком минус)
  * @param {number} price цена
  * @param {number} [cashback] кэшбэк
