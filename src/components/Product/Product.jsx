@@ -1,6 +1,8 @@
 import React from 'react';
 import { Badge } from '../Badge/index.js';
+
 import { formatMoney } from '../../utils/formatMoney.js';
+
 import './Product.css';
 
 /**

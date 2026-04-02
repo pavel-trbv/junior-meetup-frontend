@@ -1,5 +1,6 @@
 import React from 'react';
 import { TShieldIcon } from '../icons/TShieldIcon/index.js';
+
 import './Badge.css';
 
 /**
