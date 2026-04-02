@@ -8,17 +8,33 @@ import { getCashback } from '../api-logic/getCashback.js';
 import './App.css';
 
 export function App() {
+  const [query, setQuery] = useState('');
+
+  const [cashback, setCashback] = useState(null);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    getCashback()
-      .then((cashback) => getProducts({ cashback }))
-      .then((productsData) => setProducts(productsData));
+    getCashback().then((cashback) => setCashback({ cashback }));
   }, []);
+
+  useEffect(() => {
+    if (cashback) {
+      getProducts({
+        cashback,
+        query,
+      }).then((productsData) => {
+        setProducts(productsData);
+      });
+    }
+  }, [query, cashback]);
+
+  const onChange = (e) => {
+    setQuery(e.target.value);
+  };
 
   return (
     <div className="wrapper">
-      <Input type="text" placeholder="Поиск" />
+      <Input type="text" placeholder="Поиск" value={query} onChange={onChange} />
 
       <div className="list">
         {products.map((product) => (

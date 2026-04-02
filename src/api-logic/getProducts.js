@@ -3,7 +3,9 @@ import { calculateDiscount } from '../utils/calculateDiscount.js';
 import { calculateCashback } from '../utils/calculateCashback.js';
 
 export async function getProducts(options) {
-  const response = await mockFetch('https://mockapi.local/products');
+  const query = options.query.trim();
+
+  const response = await mockFetch(`https://mockapi.local/products?query=${query}`);
   const data = await response.json();
 
   return data.products.map((product) => {
