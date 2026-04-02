@@ -23,6 +23,8 @@ export function App() {
             key={product.id}
             imageUrl={product.imageUrl}
             price={product.price}
+            oldPrice={product.oldPrice}
+            discount={product.discount}
             brand={product.brand}
             name={product.name}
           />
