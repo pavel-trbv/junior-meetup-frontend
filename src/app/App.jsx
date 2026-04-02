@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Input } from '../components/Input';
 import { Product } from '../components/Product';
 
 import { getProducts } from '../api-logic/getProducts.js';
 import { getCashback } from '../api-logic/getCashback.js';
+import { debounce } from '../utils/debounce.js';
 
 import './App.css';
 
@@ -17,14 +18,23 @@ export function App() {
     getCashback().then((cashback) => setCashback({ cashback }));
   }, []);
 
+  const updateProducts = useCallback(
+    debounce(
+      (query, cashback) =>
+        getProducts({
+          query,
+          cashback,
+        }).then((productsData) => {
+          setProducts(productsData);
+        }),
+      300
+    ),
+    []
+  );
+
   useEffect(() => {
     if (cashback) {
-      getProducts({
-        cashback,
-        query,
-      }).then((productsData) => {
-        setProducts(productsData);
-      });
+      updateProducts(query, cashback);
     }
   }, [query, cashback]);
 
