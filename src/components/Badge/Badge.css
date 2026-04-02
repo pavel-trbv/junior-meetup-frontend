@@ -1,0 +1,21 @@
+.cashback {
+  background: var(--brand-premium);
+  font-size: 11px;
+  line-height: 12px;
+  color: var(--primary-invert);
+  height: 16px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 3px;
+}
+
+.cashbackAmount {
+  display: inline-block;
+  white-space: nowrap;
+  padding: 0 2px;
+  letter-spacing: -0.41px;
+  font-weight: 600;
+}

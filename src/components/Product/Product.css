@@ -1,0 +1,75 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.imageBox {
+  border-radius: 20px;
+  height: 210px;
+  width: 100%;
+  background: #F5F7F9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  height: 80%;
+}
+
+.contentBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.priceBox {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 4px;
+}
+
+.oldPriceBox {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.oldPriceAmount {
+  color: var(--secondary);
+  text-decoration: line-through;
+}
+
+.oldPriceDiscount {
+  color: var(--status-positive);
+}
+
+.realPriceBox {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.realPriceAmount {
+  font-size: 17px;
+  line-height: 20px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.productBrand {
+  color: var(--primary);
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 600;
+}
+
+.productName {
+  color: var(--primary);
+  font-size: 13px;
+  line-height: 16px;
+}

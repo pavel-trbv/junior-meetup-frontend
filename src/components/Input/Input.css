@@ -1,0 +1,28 @@
+.inputBox {
+  width: 100%;
+}
+
+.input {
+  height: 56px;
+  border-top-width: 18px;
+  border-bottom-width: 18px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+  background: #244A7F0F;
+  padding: 0 12px;
+  border-radius: 12px;
+  color: var(--primary);
+  font-family: var(--sans), sans-serif;
+  font-size: 17px;
+  line-height: 20px;
+  border-color: transparent;
+  transition: background var(--transition-timing-fast) var(--transition-curve-standart);
+
+  &:hover {
+    background: #0010240F;
+  }
+}
