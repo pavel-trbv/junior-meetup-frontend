@@ -3,9 +3,9 @@ import { Input } from '../components/Input';
 import { Product } from '../components/Product';
 
 import { getProducts } from '../api-logic/getProducts.js';
+import { getCashback } from '../api-logic/getCashback.js';
 
 import './App.css';
-import { getCashback } from '../api-logic/getCashback.js';
 
 export function App() {
   const [products, setProducts] = useState([]);

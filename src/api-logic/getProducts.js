@@ -1,5 +1,6 @@
 import { mockFetch } from '../_lib/mockFetch.js';
 import { calculateDiscount } from '../utils/calculateDiscount.js';
+import { calculateCashback } from '../utils/calculateCashback.js';
 
 export async function getProducts(options) {
   const response = await mockFetch('https://mockapi.local/products');
@@ -12,13 +13,8 @@ export async function getProducts(options) {
 
     if (options && options.cashback) {
       const { percent, topBorder } = options.cashback;
-      cashback = product.price * percent / 100;
 
-      if (cashback > topBorder) {
-        cashback = topBorder;
-      }
-
-      cashback = Math.round(cashback);
+      cashback = calculateCashback(product.price, percent, topBorder);
     }
 
     return {
