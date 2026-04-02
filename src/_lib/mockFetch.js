@@ -50,6 +50,6 @@ export const mockFetch = (url) => {
         status: 404,
         json: async () => ({ error: 'Not found' }),
       });
-    }, 300);
+    }, 100);
   });
 };
