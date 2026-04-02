@@ -5,12 +5,15 @@ import { Product } from '../components/Product';
 import { getProducts } from '../api-logic/getProducts.js';
 
 import './App.css';
+import { getCashback } from '../api-logic/getCashback.js';
 
 export function App() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    getProducts().then((productsData) => setProducts(productsData));
+    getCashback()
+      .then((cashback) => getProducts({ cashback }))
+      .then((productsData) => setProducts(productsData));
   }, []);
 
   return (
@@ -25,6 +28,7 @@ export function App() {
             price={product.price}
             oldPrice={product.oldPrice}
             discount={product.discount}
+            cashback={product.cashback}
             brand={product.brand}
             name={product.name}
           />
